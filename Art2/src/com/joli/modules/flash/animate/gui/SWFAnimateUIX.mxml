@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+		 xmlns:s="library://ns.adobe.com/flex/spark"
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 width="100%" height="100%">
+	
+	<fx:Script>
+		<![CDATA[
+			import com.joli.extension.drawswf.constans.MotionFormat;
+			import com.joli.extension.drawswf.constans.AnimateOut;
+		
+			protected function clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+		<s:RadioButtonGroup id="selAnimateFormat"></s:RadioButtonGroup>
+		<s:RadioButtonGroup id="selSWFOutContent"></s:RadioButtonGroup>
+	</fx:Declarations>
+	
+	<mx:HDividedBox width="100%" height="100%">
+		<s:VGroup width="28%" height="100%" gap="1" horizontalAlign="center">
+			<s:TextArea id="srcText" width="100%" height="100%" editable="false"></s:TextArea>
+			<s:Button id="selSrcButton" label="选择SWF源文件" click="clickHandler(event)"></s:Button>
+		</s:VGroup>
+		<s:VGroup width="72%" height="100%" gap="18"  paddingLeft="12">
+			<s:HGroup width="100%" gap="2" verticalAlign="middle">
+				<s:TextArea id="destDirText" width="100%" height="20" editable="false"></s:TextArea>
+				<s:Button id="selDestButton" width="100" label="选择输出目录" click="clickHandler(event)"></s:Button>
+			</s:HGroup>
+			<s:HGroup width="100%" gap="2" verticalAlign="middle">
+				<s:TextArea id="makeDirText" width="100%" height="20" editable="false"></s:TextArea>
+				<s:Button id="selMakeButton" width="100" label="选择构建目录" click="clickHandler(event)"></s:Button>
+			</s:HGroup>
+			<s:VGroup width="100%" gap="5">
+				<s:HGroup width="100%" gap="2" verticalAlign="middle">
+					<s:TextArea id="execTPText" width="100%" height="20" editable="false"></s:TextArea>
+					<s:Button id="selTPButton" width="100" label="TexturePacker" click="clickHandler(event)"></s:Button>
+				</s:HGroup>
+				<s:HGroup width="100%" gap="18">
+					<s:HGroup gap="1" verticalAlign="middle">
+						<s:Label text="MaxSize:"></s:Label>
+						<s:TextInput id="execTPMaxSizeText" width="50"></s:TextInput>
+					</s:HGroup>
+					<s:HGroup gap="1" verticalAlign="middle">
+						<s:Label text="GlobalScale:"></s:Label>
+						<s:TextInput id="execTPScaleText" width="40"></s:TextInput>
+					</s:HGroup>
+					<s:CheckBox id="selPremultiplyAlpha" label="PremultiplyAlpha"></s:CheckBox>
+					<s:CheckBox id="selSlimImages" label="SlimImages" selected="false"></s:CheckBox>
+				</s:HGroup>
+			</s:VGroup>
+			<s:HGroup width="100%" gap="18" verticalAlign="middle">
+				<s:CheckBox id="selPrintProfile" label="打印动画概要说明" selected="true"></s:CheckBox>
+				<s:CheckBox id="selPrintParseWarn" label="打印元件分析警告" selected="false"></s:CheckBox>
+			</s:HGroup>
+			<s:HGroup width="100%" gap="2" verticalAlign="middle">
+				<s:Label text="动画导出格式:" verticalAlign="bottom"></s:Label>
+				<s:HGroup gap="10" verticalAlign="middle">
+					<s:RadioButton group="{selAnimateFormat}" label="{MotionFormat.cocos2d}"></s:RadioButton>
+					<s:RadioButton group="{selAnimateFormat}" label="{MotionFormat.flash2d}"></s:RadioButton>
+				</s:HGroup>
+			</s:HGroup>
+			<s:HGroup width="100%" gap="2" verticalAlign="middle">
+				<s:Label text="SWF动画数量:" verticalAlign="bottom"></s:Label>
+				<s:HGroup gap="10" verticalAlign="middle">
+					<s:RadioButton group="{selSWFOutContent}" label="{AnimateOut.multiple}"></s:RadioButton>
+					<s:RadioButton group="{selSWFOutContent}" label="{AnimateOut.onlyOne}"></s:RadioButton>
+				</s:HGroup>
+			</s:HGroup>
+			<s:HGroup verticalAlign="middle" gap="20">
+				<s:HGroup verticalAlign="middle">
+					<s:Label text="导出ID(逗号隔开):"></s:Label>
+					<s:TextInput id="animateSetText" width="200"></s:TextInput>
+				</s:HGroup>
+				<s:HGroup verticalAlign="middle">
+					<s:Label text="AutoPow2Limit:"></s:Label>
+					<s:TextInput id="pow2limitText" width="40"></s:TextInput>
+				</s:HGroup>
+			</s:HGroup>
+			<s:HGroup verticalAlign="middle" paddingLeft="200">
+				<s:Button id="exportButton" label="导出动画" click="clickHandler(event)"></s:Button>
+			</s:HGroup>
+		</s:VGroup>
+	</mx:HDividedBox>
+</s:Group>

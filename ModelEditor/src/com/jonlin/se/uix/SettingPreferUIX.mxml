@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SkinnablePopUpContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+						   xmlns:s="library://ns.adobe.com/flex/spark" 
+						   xmlns:mx="library://ns.adobe.com/flex/mx" 
+						   width="300" height="300">
+	
+	<fx:Script>
+		<![CDATA[
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	
+	<s:Panel title="UserPrefer Setting" width="100%" height="100%">
+		<s:VGroup width="100%" horizontalAlign="center" paddingTop="20" gap="20">
+			<s:HGroup width="200" horizontalAlign="center" verticalAlign="middle">
+				<s:Label text="键盘移动" width="50" textAlign="right" />
+				<s:TextInput id="kFactorText" width="120" textIndent="2" />
+			</s:HGroup>
+			<s:HGroup width="200" horizontalAlign="center" verticalAlign="middle">
+				<s:Label text="默认间隔" width="50" textAlign="right" />
+				<s:TextInput id="frameTsText" width="120" textIndent="2" />
+			</s:HGroup>
+			<s:HGroup width="200" horizontalAlign="center" verticalAlign="middle">
+				<s:Label text="默认锚点" width="50" textAlign="right" />
+				<s:TextInput id="anchorXText" width="60" textIndent="2" />
+				<s:TextInput id="anchorYText" width="60" textIndent="2" />
+			</s:HGroup>
+			<s:HGroup width="200" horizontalAlign="center" verticalAlign="middle">
+				<s:Label text="默认坐标" width="50" textAlign="right" />
+				<s:TextInput id="originXText" width="60" textIndent="2" />
+				<s:TextInput id="originYText" width="60" textIndent="2" />
+			</s:HGroup>
+			<s:Button label="关闭" click="close()"/>
+		</s:VGroup>
+	</s:Panel>
+</s:SkinnablePopUpContainer>

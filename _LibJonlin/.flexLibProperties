@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="com.jonlin.core.IReusable"/>
+    <classEntry path="com.jonlin.event.IAttachEvent"/>
+    <classEntry path="com.jonlin.worker.IWorkerHandler"/>
+    <classEntry path="com.jonlin.io.events.StorageEvent"/>
+    <classEntry path="com.extenal.texturepacker.TPCommand"/>
+    <classEntry path="com.extenal.plist.lib.PDate"/>
+    <classEntry path="com.extenal.plist.lib.ParseUtils"/>
+    <classEntry path="com.extenal.plist.lib.PDict"/>
+    <classEntry path="com.extenal.plist.lib.PBoolean"/>
+    <classEntry path="com.extenal.plist.lib.Plist"/>
+    <classEntry path="com.extenal.plist.lib.PlistElement"/>
+    <classEntry path="com.extenal.plist.lib.PNumber"/>
+    <classEntry path="com.extenal.plist.lib.PString"/>
+    <classEntry path="com.extenal.plist.lib.PArray"/>
+    <classEntry path="com.extenal.plist.LocalPlist"/>
+    <classEntry path="com.extenal.plist.lib.Plist10"/>
+    <classEntry path="com.extenal.plist.lib.Bin2Xml"/>
+    <classEntry path="com.jonlin.utils.XMLUtil"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>

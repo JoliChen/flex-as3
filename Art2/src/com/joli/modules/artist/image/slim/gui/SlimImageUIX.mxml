@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group 
+	xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:s="library://ns.adobe.com/flex/spark" 
+	xmlns:mx="library://ns.adobe.com/flex/mx" 
+	width="100%" height="100%">
+	
+	<fx:Script>
+		<![CDATA[
+			protected function clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	
+	<s:VGroup width="100%" height="100%" gap="20">
+		<s:HGroup width="100%" gap="2" verticalAlign="middle">
+			<s:TextArea id="srcText" width="100%" height="20" editable="false"></s:TextArea>
+			<s:Button id="selSrcButton" label="图片目录" click="clickHandler(event)"></s:Button>
+		</s:HGroup>
+		
+		<s:HGroup width="100%" gap="2" verticalAlign="middle">
+			<s:TextArea id="dstText" width="100%" height="20" editable="false"></s:TextArea>
+			<s:Button id="selDstButton" label="保存目录" click="clickHandler(event)"></s:Button>
+		</s:HGroup>
+		
+		<s:HGroup width="100%" gap="2" horizontalAlign="left">
+			<s:CheckBox id="recursionBox" label="递归子目录"></s:CheckBox>
+		</s:HGroup>
+		
+		<s:HGroup width="100%" gap="2" horizontalAlign="left">
+			<s:Button id="slimButton" label="开始压缩" click="clickHandler(event)"></s:Button>
+		</s:HGroup>
+	</s:VGroup>
+	
+</s:Group>

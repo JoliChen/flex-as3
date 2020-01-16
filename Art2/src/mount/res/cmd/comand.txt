@@ -1,0 +1,32 @@
+--opt <pixelformat> Optimized output for given pixel formats. Supported formats are:
+RGBA8888 	- 32bit, 8bit/channel, 8bit transparency
+BGRA8888 	- 32bit, 8bit/channel, 8bit transparency
+RGBA4444 	- 16bit, 4bit/channel, 4bit transparency
+RGB888 		- 24bit, 8bit/channel, no transparency
+RGB565 		- 16bit, 5bit red, 6bit green, 5bit blue, no transparancy
+RGBA5551 	- 16bit, 5bit/channel, 1bit transparancy
+RGBA5555 	- 20bit, 5bit/channel, 5bit transparancy
+PVRTC2 		- PVRTC compression, 2bit per pixel, PVR files only
+PVRTC4 		- PVRTC compression, 4bit per pixel, PVR files only
+PVRTC2_NOALPHA - PVRTC compression, 2bit per pixel, PVR files only
+PVRTC4_NOALPHA - PVRTC compression, 4bit per pixel, PVR files only
+ALPHA 		- 8bit transparency
+ALPHA_INTENSITY - 8bit intensity, 8bit transparency
+ETC1 		- ETC1 compression (PKM file only)
+
+--texture-format <id> Sets the format for the textures.
+The format type is automatically derived from the sheet's file name
+if possible.
+Available formats:
+png 	- PNG (32bit)
+pvr2 	- PowerVR Texture Format, Format Version 2
+pvr2gz 	- PowerVR Texture Format, Format Version 2, compressed with gzip
+pvr2ccz - PowerVR Texture Format, Format Version 2, compressed with zlib, cocos2d header
+jpg 	- JPG image format, lossy compression, no transparency
+bmp 	- 24 bit BMP
+tga 	- Targa Image Format
+tiff 	- Tagged Image File Format
+pkm 	- PKM image format, ETC1 compression
+ppm_ascii - Netpbm color image format, ascii version
+ppm_binary - Netpbm color image format, binary version
+webp 	- WebP lossless / lossy format

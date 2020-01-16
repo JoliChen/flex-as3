@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		  xmlns:s="library://ns.adobe.com/flex/spark" 
+		  xmlns:mx="library://ns.adobe.com/flex/mx"
+		  xmlns:uix="com.jonlin.se.uix.*"
+		  width="100%" height="100%"
+		  paddingLeft="3" paddingRight="3" paddingTop="3" paddingBottom="8" gap="3">
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.XMLListCollection;
+			
+			[Bindable]
+			protected var menuBarModel:XMLListCollection = new XMLListCollection(
+				<>
+					<menuitem label="文件" data="file">
+						<menuitem label="打开">
+							<menuitem label="导入 序列图" data="importSuite" />
+							<menuitem label="导入 COCOS图集" data="importCocos" />
+						</menuitem>
+						<menuitem type="separator" gap="0"/>
+						<menuitem label="保存">
+							<menuitem label="导出 COCOS图集" data="exportCocos"/>
+						</menuitem>
+					</menuitem>
+					<menuitem label="编辑" data="edit">
+						<menuitem label="显示标尺" toggled="false" type="check" data="ctrlRuler"/>
+						<menuitem label="显示边框" toggled="false" type="check" data="ctrlBound"/>
+						<menuitem label="左右翻转" toggled="false" type="check" data="ctrlFlip"/>
+						<menuitem label="全部停止" toggled="false" type="check" data="ctrlTimeline"/>
+					</menuitem>
+					<menuitem label="设置" data="edit">
+						<menuitem label="首选配置" data="openDefaultConfig" />
+						<menuitem label="TexturePacker" data="openTexturePacker"/>
+					</menuitem>
+				</>);
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	
+	<!-- 
+	<mx:VDividedBox width="100%" height="100%" paddingLeft="2" paddingRight="2" paddingTop="2" paddingBottom="2">
+	</mx:VDividedBox>
+	-->
+	
+	<s:HGroup width="100%" verticalAlign="middle" gap="20">
+		<mx:MenuBar id="menuBar" labelField="@label" dataProvider="{menuBarModel}" />
+		<s:HGroup width="100%" verticalAlign="middle" gap="2">
+			<s:Label text="源地址" />
+			<s:TextInput id="importText" editable="false" width="100%" />
+		</s:HGroup>
+	</s:HGroup>
+	
+	<s:Group id="editArea" enabled="true" width="100%" height="100%">
+	</s:Group>
+	
+	<s:VGroup width="100%" gap="10">
+		<s:HGroup width="100%" verticalAlign="middle" gap="20">
+			<s:HGroup verticalAlign="middle">
+				<s:Button id="stopBtn" label="停止" width="50" />
+				<s:Button id="pauseBtn" label="暂停" width="50" toolTip="空格键" />
+				<s:Button id="playBtn" label="播放" width="50" toolTip="空格键" />
+			</s:HGroup>
+			<s:HGroup width="100%" verticalAlign="middle" gap="2">
+				<s:Label text="帧配置" />
+				<s:TextInput id="tlText" restrict="0-9a-z_:-#" width="100%" textIndent="2" />
+			</s:HGroup>
+		</s:HGroup>
+		<s:HGroup width="100%" verticalAlign="middle" gap="100">
+			<s:HGroup verticalAlign="middle" width="100" gap="2">
+				<s:Label text="尺寸" />
+				<s:Label id="spriteWText" text="0000" />
+				<s:Label text="*" />
+				<s:Label id="spriteHText" text="0000" />
+			</s:HGroup>
+			<s:HGroup verticalAlign="middle" gap="2" height="100%">
+				<s:Label text="锚点" />
+				<s:TextInput id="anchorXText" text="0.000000" width="60" restrict="0-9." />
+				<s:TextInput id="anchorYText" text="0.000000" width="60" restrict="0-9." />
+			</s:HGroup>
+			<s:HGroup verticalAlign="middle" width="100" gap="2">
+				<s:Label text="帧"  />
+				<s:Label id="frameNumsText" text="0" />
+				<s:Label text="-" />
+				<s:Label id="frameStepText" text="0" />
+			</s:HGroup>
+			<s:HGroup verticalAlign="middle" gap="2">
+				<s:Label text="FPS" paddingTop="2"/>
+				<s:TextInput id="fpsText" width="30" restrict="0-9" />
+			</s:HGroup>
+			<s:HGroup verticalAlign="middle" gap="2">
+				<s:Label text="背景" />
+				<mx:ColorPicker id="editBgCP" color="0" />
+			</s:HGroup>
+		</s:HGroup>
+	</s:VGroup>
+	
+</s:VGroup>

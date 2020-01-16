@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SkinnablePopUpContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+						   xmlns:s="library://ns.adobe.com/flex/spark" 
+						   xmlns:mx="library://ns.adobe.com/flex/mx" 
+						   width="300" height="300">
+	
+	<fx:Script>
+		<![CDATA[
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	
+	<s:Panel title="TexturePacker Setting" width="100%" height="100%">
+		<s:VGroup width="100%" horizontalAlign="center" paddingTop="20" gap="20">
+			<s:HGroup width="300" horizontalAlign="center" verticalAlign="middle">
+				<s:VGroup horizontalAlign="right">
+					<s:Label text="命令行程序" width="78" textAlign="right" />
+					<s:Button id="tpSelectBtn" label="选择" width="48" />
+				</s:VGroup>
+				<mx:TextArea id="tpText" width="200" wordWrap="true" editable="false" text="" />
+			</s:HGroup>
+			<s:HGroup width="200" horizontalAlign="center" verticalAlign="middle">
+				<s:Label text="最大尺寸" width="50" textAlign="right" />
+				<s:TextInput id="maxsizeText" width="60" textIndent="2" />
+			</s:HGroup>
+			<s:HGroup width="200" horizontalAlign="center" verticalAlign="middle">
+				<s:Label text="缩放系数" width="50" textAlign="right" />
+				<s:TextInput id="scaleText" width="60" textIndent="2" />
+			</s:HGroup>
+			<s:CheckBox id="trimNameText" label="去除后缀" />
+			<s:Button label="关闭" click="close()"/>
+		</s:VGroup>
+	</s:Panel>
+</s:SkinnablePopUpContainer>
