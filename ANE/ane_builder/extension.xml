@@ -1,0 +1,16 @@
+<extension xmlns="http://ns.adobe.com/air/extension/32.0">
+    <id>com.jm.ane.miss</id>
+    <versionNumber>1</versionNumber>
+    <platforms>
+        <platform name="default">
+            <applicationDeployment>
+            </applicationDeployment>
+        </platform>
+        <platform name="Android-ARM">
+            <applicationDeployment>
+                <nativeLibrary>miss.jar</nativeLibrary>
+                <initializer>com.jm.ane.miss.NativeExtension</initializer>
+            </applicationDeployment>
+        </platform>
+    </platforms>
+</extension>
