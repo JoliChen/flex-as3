@@ -95,6 +95,7 @@ package com.joli.modules.artist.image.slim.process.utils
 			if (!kit.isIdle()) {
 				return;
 			}
+			_log.debug("--------------{0}", _slimImgs.length);
 			const srcPath:String = _slimImgs.pop().nativePath;
 			const dstPath:String = _dstDir + srcPath.substring(_srcPos);
 			kit.slim(srcPath, dstPath, this);
