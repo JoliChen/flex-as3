@@ -21,8 +21,8 @@ package com.jonlin.se.support
 	public class EditData implements IDispose
 	{
 		private static const PRECEISION:int = 6;
-		private static const SEP1:String = "_";
-		private static const SEP2:String = ":";
+		private static const SEP1:String = "|";
+		private static const SEP2:String = "_";
 		
 		public static const TYPE_SUITE:int = 1;
 		public static const TYPE_COCOS:int = 2;

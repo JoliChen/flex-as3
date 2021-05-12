@@ -169,53 +169,30 @@ package com.jonlin.se.uix
 		private function onClickMenuItem(event:MenuEvent):void
 		{
 			var action:String = event.item.@data;
-			switch(action)
-			{
-				case "importSuite": {
-					FileUtil.selectDir(onImportSuite, "打开精灵序列图", _uHabits.pathOfImportSuite);
-					break;
+			if (action == "importSuite") {
+				FileUtil.selectDir(onImportSuite, "打开精灵序列图", _uHabits.pathOfImportSuite);
+			} else if (action == "importCocos") {
+				FileUtil.openFile(onImportCocos, "打开TP图集", EditConst.TEX_INFO_FILTER, _uHabits.pathOfImportCocos);
+			} else if (action == "exportCocos") {
+				if (_avatar.editData) {
+					FileUtil.selectDir(onExportCocos, "保存TP图集", _uHabits.pathOfExportCocos);
 				}
-				case "importCocos": {
-					FileUtil.openFile(onImportCocos, "打开TP图集", EditConst.TEX_INFO_FILTER, _uHabits.pathOfImportCocos);
-					break;
-				}
-				case "exportCocos": {
-					if (_avatar.editData) {
-						FileUtil.selectDir(onExportCocos, "保存TP图集", _uHabits.pathOfExportCocos);
-					}
-					break;
-				}
-				case "createWidget": {
-					
-				}
-				case "ctrlRuler": {
-					_uHabits.showRulerAble = XMLUtil.isYes(event.item.@toggled[0]);
-					break;
-				}
-				case "ctrlBound": {
-					_uHabits.showBoundAble = XMLUtil.isYes(event.item.@toggled[0]);
-					break;
-				}
-				case "ctrlFlip": {
-					_uHabits.showFlipXAble = XMLUtil.isYes(event.item.@toggled[0]);
-					break;
-				}
-				case "ctrlTimeline": {
-					_center.ctrlTimeline(XMLUtil.isYes(event.item.@toggled[0]));
-					break;
-				}
-				case "openDefaultConfig": {
-					openSettingDefDialog();
-					break;
-				}
-				case "openTexturePacker": {
-					openSettingTPDialog();
-					break;
-				}
-				default: {
-					trace("unspport menu action", action);
-					break;
-				}
+			} else if (action == "createWidget") {
+			
+			} else if (action == "ctrlRuler") {
+				_uHabits.showRulerAble = XMLUtil.isYes(event.item.@toggled[0]);
+			} else if (action == "ctrlBound") {
+				_uHabits.showBoundAble = XMLUtil.isYes(event.item.@toggled[0]);
+			} else if (action == "ctrlFlip") {
+				_uHabits.showFlipXAble = XMLUtil.isYes(event.item.@toggled[0]);
+			} else if (action == "ctrlTimeline") {
+				_center.ctrlTimeline(XMLUtil.isYes(event.item.@toggled[0]));
+			} else if (action == "openDefaultConfig") {
+				openSettingDefDialog();
+			} else if (action == "openTexturePacker") {
+				openSettingTPDialog();
+			} else {
+				trace("unspport menu action", action);
 			}
 		}
 		
